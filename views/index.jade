@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  style.
+    input {
+      margin-bottom: 10px;
+      display:block;
+      overflow:hidden;
+    }
+  h1= title
+  p Welcome to #{title}
+
+  form(action="/", method="POST")
+    input(type="text", name="firstName", value="#{customer.firstName}", required)
+    input(type="text", name="lastName", value="#{customer.lastName}", required)
+    input(type="text", name="email", value="#{customer.email}", required)
+
+    button(type="submit") Save
